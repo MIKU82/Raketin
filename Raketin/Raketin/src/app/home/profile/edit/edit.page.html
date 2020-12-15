@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="home/tabs/profile">
+        <ion-icon slot="icon-only" name="arrow-back" defaultHref="/home/tabs/profile"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nama</ion-label>
+        <ion-input type="text" ngModel name="nama"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" ngModel name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="text" ngModel name="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" color="dark" expand="block">SIMPAN</ion-button>
+  </form>
+
+</ion-content>

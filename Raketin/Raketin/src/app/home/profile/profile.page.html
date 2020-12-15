@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="home/tabs/main">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-col *ngIf="authSrv.isLoggedIn === true">
+  <ion-item>
+    <ion-avatar slot="start">
+      <ion-img src="https://2.bp.blogspot.com/_gJgdaWwz4A4/S0dRL0Rhx-I/AAAAAAAAAIY/lzW94TSwTtE/s320/badminton.gif"></ion-img>
+    </ion-avatar>
+    <ion-label>
+      {{ names }}
+    </ion-label>
+    <ion-label>
+      {{ niks }}
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    {{ address }}
+  </ion-item>
+  <ion-item>
+    {{ userEmail }}
+  </ion-item>
+  <ion-item>
+    {{ phones }}
+  </ion-item>
+  </ion-col>
+
+ <!--  <ion-card>
+    <ion-card-content>
+      Riwayat Pembelian
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      Jenis Raket
+    </ion-card-content>
+  </ion-card>
+-->
+  <ion-button color="dark"href="home/tabs/profile/edit">
+      EDIT PROFILE
+  </ion-button>
+
+   <ion-button (click)="logout()">
+      <ion-icon slot="icon-only" name="create"></ion-icon>  
+    </ion-button>
+    <h6>LOG OUT</h6>
+
+  <ion-item *ngIf="authSrv.isLoggedIn === false">
+    <ion-button color="dark"type="submit" href="/login">Masuk Sekarang</ion-button>
+  </ion-item>
+
+
+</ion-content>
